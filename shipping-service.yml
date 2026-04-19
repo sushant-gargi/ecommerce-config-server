@@ -1,6 +1,11 @@
+server:
+  port: 9030
+  servlet:
+    context-path: /shipping
+
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/shipping_db
+    url: jdbc:postgresql://localhost:5433/shipping_db
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
@@ -11,13 +16,4 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-
-server:
-  port: 9030
-  servlet:
-    context-path: /shipping
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+        format_sql: true
