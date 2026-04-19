@@ -1,0 +1,2 @@
+my.variable=HelloFromConfigServer-DEV
+features.user-tracking-enabled=true
