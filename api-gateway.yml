@@ -18,6 +18,7 @@ spring:
             - name: Authentication            
               args:
                 is-enabled: true
+                allowed-roles: [USER, ADMIN]
 
         - id: inventory-service
           uri: lb://inventory-service
@@ -29,6 +30,7 @@ spring:
             - name: Authentication           
               args:
                 is-enabled: true
+                allowed-roles: [ADMIN]
 
         - id: shipping-service             
           uri: lb://shipping-service
@@ -39,3 +41,4 @@ spring:
             - name: Authentication
               args:
                 is-enabled: true
+                llowed-roles: [USER, ADMIN]
