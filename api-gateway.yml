@@ -17,7 +17,7 @@ spring:
             - LoggingOrdersFilter            
             - name: Authentication            
               args:
-                isEnabled: true
+                is-enabled: true
 
         - id: inventory-service
           uri: lb://inventory-service
@@ -28,7 +28,7 @@ spring:
             - AddRequestHeader=X-Custom-Header, Sushant
             - name: Authentication           
               args:
-                isEnabled: true
+                is-enabled: true
 
         - id: shipping-service             
           uri: lb://shipping-service
@@ -38,4 +38,4 @@ spring:
             - StripPrefix=2
             - name: Authentication
               args:
-                isEnabled: true
+                is-enabled: true
