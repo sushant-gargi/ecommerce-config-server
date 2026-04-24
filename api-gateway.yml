@@ -15,7 +15,7 @@ spring:
             - LoggingOrdersFilter            
             - name: Authentication            
               args:
-                is-enabled: true
+                enabled: true
                 allowed-roles: [USER, ADMIN]
         - id: inventory-service
           uri: lb://inventory-service
@@ -26,7 +26,7 @@ spring:
             - AddRequestHeader=X-Custom-Header, Sushant
             - name: Authentication           
               args:
-                is-enabled: true
+                enabled: true
                 allowed-roles: [ADMIN]
         - id: shipping-service             
           uri: lb://shipping-service
@@ -36,7 +36,7 @@ spring:
             - StripPrefix=2
             - name: Authentication
               args:
-                is-enabled: true
+                enabled: true
                 allowed-roles: [USER, ADMIN]   # fix the typo here too
 
 eureka:
