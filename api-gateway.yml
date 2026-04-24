@@ -1,9 +1,7 @@
 server:
   port: 9000                         
-
 jwt:
   secretKey: SushantGargiSecretKeyForJWTMustBe32Chars12
-
 spring:
   cloud:
     gateway:
@@ -19,7 +17,6 @@ spring:
               args:
                 is-enabled: true
                 allowed-roles: [USER, ADMIN]
-
         - id: inventory-service
           uri: lb://inventory-service
           predicates:
@@ -31,7 +28,6 @@ spring:
               args:
                 is-enabled: true
                 allowed-roles: [ADMIN]
-
         - id: shipping-service             
           uri: lb://shipping-service
           predicates:
@@ -41,4 +37,13 @@ spring:
             - name: Authentication
               args:
                 is-enabled: true
-                llowed-roles: [USER, ADMIN]
+                allowed-roles: [USER, ADMIN]   # fix the typo here too
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
